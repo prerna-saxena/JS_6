@@ -1,0 +1,47 @@
+*****************************************          Transpilers           ***************************************************************
+
+A transpiler is a special piece of software that translates source code to another source code.
+It can parse (“read and understand”) modern code and rewrite it using older syntax constructs, 
+so that it’ll also work in outdated engines.
+
+The ?? operator is the nullish coalescing operator.  It's used to provide a default value if a variable is null or undefined.
+In the code height = height ?? 100;, it means:
+"If height is null or undefined, assign it the value 100. Otherwise, keep the current value of height."
+
+
+let height = 0;
+
+let height1 = height ?? 100; // height1 will be 0 (because height is not null or undefined)
+let height2 = height || 100; // height2 will be 100 (because 0 is a falsy value)
+
+console.log(height1); // Output: 0
+console.log(height2); // Output: 100
+
+*********************************************        POLYFILLS            ****************************************************************************
+
+A polyfill typically checks if a particular feature exists. If it doesn't, 
+the polyfill provides an implementation of that feature using older, compatible JavaScript. 
+This allows your code to run consistently across different browsers.
+
+
+if (!Math.trunc) { // if no such function
+  // implement it
+  Math.trunc = function(number) {
+    // Math.ceil and Math.floor exist even in ancient JavaScript engines
+    // they are covered later in the tutorial
+    return number < 0 ? Math.ceil(number) : Math.floor(number);
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
